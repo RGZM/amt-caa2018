@@ -269,7 +269,7 @@
 							openModal(params.nodes[0]);
 					});
 					update();
-					//propModal();
+					propModal();
 				});
 				$("#modal").modal({
 					complete: cancelEdit
@@ -612,9 +612,9 @@
 					</div>
 					<div id="props" class="col s4 left-align">
 						<a class="btn-floating btn-large black" onclick="info()" title="Information"><i class="material-icons">info</i></a>
-						<a class="btn-floating btn-large black" onclick="openGraphPropModal()" title="Ontology wechseln"><i class="material-icons">palette</i></a>
+						<a class="btn-floating btn-large black" onclick="propModal()" title="switch ontology"><i class="material-icons">palette</i></a>
 						<a class="btn-floating btn-large black" onclick="exportOptions()" title="Download Edges and Nodes"><i class="material-icons">file_download</i></a>
-						<a class="btn-floating btn-large black" onclick="loadJSONGraph()" title="load JSON Graph"><i class="material-icons">file_upload</i></a>
+						<!--<a class="btn-floating btn-large black" onclick="loadJSONGraph()" title="load JSON Graph"><i class="material-icons">file_upload</i></a>-->
 					</div>
 					<div id="buttons" class="col s3 right-align">
 						<a class="btn-floating btn-large edit blue" onclick="edit()" title="Close edit mode"><i class="material-icons">cancel</i></a>
@@ -748,19 +748,22 @@
 		</div>
 		<div id="propertiesModal" class="modal">
 			<div class="modal-content">
-				<h4>Ontologie wählen</h4>
+				<h4>Choose the Example:</h4>
 				<br>
 				<ul class="collection">
-		      <li class="collection-item"><b>Allen-Freksa-Netzwerk</b>&nbsp;&nbsp;<div class="chip blue lighten-4">Event</div></li>
+		      <li class="collection-item"><div class="chip red lighten-1">Object</div><div class="chip blue lighten-2">Keyword</div><div class="chip orange lighten-1">Concept</div></li>
 		    </ul>
 				<br>
 				<form class="col s12">
 					<div class="row">
 						<div class="input-field col s12">
-					    <select id="ontology" disabled>
-								<option value="time">Allen-Freksa-Netzwerk</option>
+					    <select id="ontology">
+								<option value="transmil">Transport or Military Vessel?</option>
+								<option value="lateenfore">Lateen or Fore Sail?</option>
+								<option value="sailedrowed">Sailed or Rowed?</option>
+								<option value="nero">Nero?</option>
 							</select>
-    					<label>Ontologie</label>
+    					<label>Example</label>
   					</div>
 					</div>
 			</form>
