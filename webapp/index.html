@@ -64,13 +64,16 @@
 						}
 						if (updated.nodes[i].concept.includes("Object")) {
 							updated.nodes[i].color = {background:'Crimson', border:'Crimson', highlight:{background:'white', border:'red'}};
-							updated.nodes[i].shape = "box";
+							updated.nodes[i].shape = "image";
+							updated.nodes[i].image = "img/"+updated.nodes[i].label+".jpg";
 						} else if (updated.nodes[i].concept.includes("Keyword")) {
 							updated.nodes[i].color = {background:'CornflowerBlue', border:'CornflowerBlue', highlight:{background:'white', border:'blue'}};
-							updated.nodes[i].shape = "box";
+							updated.nodes[i].shape = "image";
+							updated.nodes[i].image = "img/keyword.png";
 						} else if (updated.nodes[i].concept.includes("Concept")) {
 							updated.nodes[i].color = {background:'orange', border:'orange', highlight:{background:'white', border:'orange'}};
-							updated.nodes[i].shape = "box";
+							updated.nodes[i].shape = "image";
+							updated.nodes[i].image = "img/concept.png";
 						} else {
 							updated.nodes[i].color = {background:'grey', border:'black', highlight:{background:'white',border:'black'}};
 							updated.nodes[i].shape = "box";
