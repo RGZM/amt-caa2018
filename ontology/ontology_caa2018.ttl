@@ -55,13 +55,18 @@ caa:matchesWith rdf:type amt:Role .
 caa:matchesWith rdfs:label "matches with" .
 caa:matchesWith rdfs:domain caa:Keyword .
 caa:matchesWith rdfs:range caa:Concept .
-caa:matchesWith rdfs:domain caa:Object .
+# caa:matchesWith rdfs:domain caa:Object .
+
+caa:matchedBy rdf:type amt:Role .
+caa:matchedBy rdfs:label "is matched by" .
+caa:matchedBy rdfs:domain caa:Concept .
+caa:matchedBy rdfs:range caa:Keyword .
 
 caa:broaderThan rdf:type amt:Role .
 caa:broaderThan rdfs:label "is broader than" .
 caa:broaderThan rdfs:domain caa:Concept .
 caa:broaderThan rdfs:range caa:Concept .
-caa:broaderThan rdfs:domain caa:Keyword .
+# caa:broaderThan rdfs:domain caa:Keyword .
 
 caa:narrowerThan rdf:type amt:Role .
 caa:narrowerThan rdfs:label "is narrower than" .
@@ -128,7 +133,11 @@ caa:Axiom05I amt:inverse caa:broaderThan .
 
 caa:Axiom06 rdf:type amt:InverseAxiom .
 caa:Axiom06 amt:antecedent caa:matchesWith .
-caa:Axiom06 amt:inverse caa:matchesWith .
+caa:Axiom06 amt:inverse caa:matchedBy .
+
+caa:Axiom06I rdf:type amt:InverseAxiom .
+caa:Axiom06I amt:antecedent caa:matchedBy .
+caa:Axiom06I amt:inverse caa:matchesWith .
 
 # SelfDisjointAxiom
 
@@ -146,3 +155,6 @@ caa:Axiom10 amt:role caa:narrowerThan .
 
 caa:Axiom11 rdf:type amt:SelfDisjointAxiom .
 caa:Axiom11 amt:role caa:matchesWith .
+
+caa:Axiom12 rdf:type amt:SelfDisjointAxiom .
+caa:Axiom12 amt:role caa:matchedBy .
