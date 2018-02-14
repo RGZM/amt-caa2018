@@ -313,8 +313,10 @@
 				TIME.thisNodes = [];
 				TIME.thisEdges = [];
 				TIME.amt = new AMT();
-				if (TIME.ontology==="transmil") {
+				if (TIME.ontology==="military") {
 					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018");
+				} else if (TIME.ontology==="transport") {
+					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018a");
 				} else if (TIME.ontology==="lateenfore") {
 					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018b");
 				} else if (TIME.ontology==="sailedrowed") {
@@ -777,7 +779,8 @@
 					<div class="row">
 						<div class="input-field col s12">
 					    <select id="ontology">
-								<option value="transmil" selected>Transport or Military Vessel?</option>
+								<option value="military" selected>Military Vessel?</option>
+								<option value="transport">Transport Vessel?</option>
 								<option value="lateenfore">Lateen or Fore Sail?</option>
 								<option value="sailedrowed">Sailed or Rowed?</option>
 								<option value="nero">Nero?</option>
