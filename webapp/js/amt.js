@@ -185,8 +185,12 @@ var AMT = function() {
 			cpy.nodes.push({id: graph.nodes[i].id, label: graph.nodes[i].label, concept: graph.nodes[i].concept});
 		}
 		for (var i in graph.edges) {
-      var role = graph.edges[i].role.replace("http://academic-meta-tool.xyz/AllenFreksa#","");
-      cpy.edges.push({role: graph.edges[i].role, from: graph.edges[i].from, to: graph.edges[i].to, width: graph.edges[i].width, label: role, font: {align: 'middle', size:10, color:'black', face:'arial'}});
+            if (graph.edges[i].width > 1.0) {
+				width = 1.0;
+			} else {
+				width = Math.floor(graph.edges[i].width * 10) / 10;
+			}
+            cpy.edges.push({role: graph.edges[i].role, from: graph.edges[i].from, to: graph.edges[i].to, width: graph.edges[i].width, label: width, font: {align: 'middle', size:10, color:'black', face:'arial'}});
 		}
 		return cpy;
 	};
@@ -206,11 +210,12 @@ var AMT = function() {
 		}
 		if (k<0 && width>0) {
 			//edges.push({role: role, from: from, to: to, width: width});
-      var roleShort = role.replace("http://academic-meta-tool.xyz/AllenFreksa#","");
-      if (roleShort==="q") {
-        roleShort = "?";
-      }
-      edges.push({role: role, from: from, to: to, width: width, label: roleShort, font: {align: 'middle', size:10, color:'red', face:'arial'}});
+            if (width > 1.0) {
+				width = 1.0;
+			} else {
+				width = Math.floor(width * 10) / 10;
+			}
+      edges.push({role: role, from: from, to: to, width: width, label: width, font: {align: 'middle', size:10, color:'red', face:'arial'}});
 			return true;
 		}
 		return false;
@@ -323,7 +328,13 @@ var AMT = function() {
 		}
 		else {
 			if (width > 0)
-				GRAPH.edited.edges.push({role: role, from: from, to: to, width: width});
+            //GRAPH.edited.edges.push({role: role, from: from, to: to, width: width});
+            if (width > 1.0) {
+                width = 1.0;
+            } else {
+                width = Math.floor(width * 10) / 10;
+            }
+            GRAPH.edited.edges.push({role: role, from: from, to: to, width: width, label: width, font: {align: 'middle', size:10, color:'black', face:'arial'}});
 		}
 		return consistent();
 	};
