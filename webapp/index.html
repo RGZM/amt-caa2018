@@ -136,6 +136,13 @@
 				TIME.edit = !TIME.edit;
 				$(".edit").toggle();
 				$(".normal").toggle();
+				if(TIME.edit) {
+					$("#r-but").show();
+					$("#e-but").hide();
+				} else {
+					$("#r-but").hide();
+					$("#e-but").show();
+				}
 				update();
 			};
 			var cancel = function() {
@@ -260,7 +267,9 @@
 						$("#buttons").prepend(a);
 					}
 					$(".edit").hide();
-					var graph = TIME.amt.getGraph(true);
+					$("#r-but").show();
+					$("#e-but").hide();
+					var graph = TIME.amt.getGraph(false,true);
 					TIME.graph.nodes = new vis.DataSet(graph.nodes);
 					TIME.graph.edges = new vis.DataSet(graph.edges);
 					var network = new vis.Network(document.getElementById("graph"),{nodes: TIME.graph.nodes, edges: TIME.graph.edges},{});
@@ -268,7 +277,6 @@
 						if (TIME.edit)
 							openModal(params.nodes[0]);
 					});
-					update();
 					propModal();
 				});
 				$("#modal").modal({
@@ -298,7 +306,7 @@
 				TIME = {};
 				TIME.ontology = $("#ontology").val();
 				TIME.graph = {};
-				TIME.edit = false;
+				TIME.edit = true;
 				TIME.thisNodes = [];
 				TIME.thisEdges = [];
 				TIME.amt = new AMT();
@@ -319,7 +327,7 @@
 						var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\""+concepts[i].concept+"\")' title='Add "+concepts[i].label+" node'><i class='material-icons'>add "+concepts[i].label.substr(0,1)+"</i></a>");
 						$("#buttons").prepend(a);
 					}
-					$(".edit").hide();
+					$(".edit").show();
 					var graph = TIME.amt.getGraph(true);
 					TIME.graph.nodes = new vis.DataSet(graph.nodes);
 					TIME.graph.edges = new vis.DataSet(graph.edges);
@@ -619,14 +627,14 @@
 						<b class="description">Amt.CAA2018.</b>
 					</div>
 					<div id="props" class="col s4 left-align">
-						<a class="btn-floating btn-large black" onclick="info()" title="Information"><i class="material-icons">info</i></a>
-						<a class="btn-floating btn-large black" onclick="propModal()" title="switch ontology"><i class="material-icons">palette</i></a>
-						<a class="btn-floating btn-large black" onclick="exportOptions()" title="Download Edges and Nodes"><i class="material-icons">file_download</i></a>
+						<a class="btn-floating btn-large black" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
+						<a class="btn-floating btn-large black" onclick="propModal()" title="switch example"><i class="material-icons">sync</i></a>
+						<a class="btn-floating btn-large black" onclick="exportOptions()" title="download data"><i class="material-icons">file_download</i></a>
 						<!--<a class="btn-floating btn-large black" onclick="loadJSONGraph()" title="load JSON Graph"><i class="material-icons">file_upload</i></a>-->
 					</div>
 					<div id="buttons" class="col s3 right-align">
-						<a class="btn-floating btn-large edit blue" onclick="edit()" title="Close edit mode"><i class="material-icons">cancel</i></a>
-						<a class="btn-floating btn-large normal blue" onclick="edit()" title="Open edit mode"><i class="material-icons">edit</i></a>
+						<a class="btn-floating btn-large blue" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
+						<a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>
 					</div>
 					<div id="store" class="col s3 left-align">
 						<div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
