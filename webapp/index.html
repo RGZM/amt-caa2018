@@ -302,7 +302,15 @@
 				TIME.thisNodes = [];
 				TIME.thisEdges = [];
 				TIME.amt = new AMT();
-				TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018");
+				if (TIME.ontology==="transmil") {
+					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018");
+				} else if (TIME.ontology==="lateenfore") {
+					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018b");
+				} else if (TIME.ontology==="sailedrowed") {
+					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018c");
+				} else if (TIME.ontology==="nero") {
+					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018d");
+				}
 				console.log(TIME);
 				TIME.amt.load(function() {
 					var concepts = TIME.amt.getConcepts();
