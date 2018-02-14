@@ -96,8 +96,10 @@
 					for (var i in updated.edges) {
 						updated.edges[i].arrowStrikethrough = false;
 						updated.edges[i].chosen = false;
-						if (updated.edges[i].width < 0.1) {
+						console.log(updated.edges[i].width);
+						if (updated.edges[i].width < 0.1 || updated.edges[i].width === 0) {
 							updated.edges[i].hidden = true;
+							//console.log(updated.edges[i]);
 						}
 						var roleWithPrefix = "https://github.com/RGZM/amt-caa2018#";
 						if (updated.edges[i].role===roleWithPrefix+"hasDepiction") {
@@ -116,17 +118,14 @@
 							updated.edges[i].length = 200;
 							updated.edges[i].smooth = false;
 						} else if (updated.edges[i].role===roleWithPrefix+"isDepictionOf") {
-							updated.edges[i].color = {color:"grey", highlight:"black"};
-							updated.edges[i].hidden = hiddenInverse;
+							updated.edges[i].hidden = true;
 						} else if (updated.edges[i].role===roleWithPrefix+"narrowerThan") {
-							updated.edges[i].color = {color:"grey", highlight:"black"};
-							updated.edges[i].hidden = hiddenInverse;
+							updated.edges[i].hidden = true;
 						} else if (updated.edges[i].role===roleWithPrefix+"matchedBy") {
-							updated.edges[i].color = {color:"grey", highlight:"black"};
-							updated.edges[i].hidden = hiddenInverse;
+							updated.edges[i].hidden = true;
 						} else {
 							updated.edges[i].color = {color:"black", highlight:"black"};
-							updated.edges[i].arrows = "to";
+							updated.edges[i].dashes = true;
 						}
 					}
 					TIME.graph.nodes.update(updated.nodes);
@@ -226,7 +225,7 @@
 					$("#save").show();
 					if (!TIME.amt.removeIndividual(from)) {
 						console.log("Inkonsistenz vorhanden");
-						$("#save").hide();
+						//$("#save").hide();
 					}
 				}
 				$("#store").show();
@@ -253,7 +252,7 @@
 						if (!inconsistent)
 							console.log("Inkonsistenz vorhanden");
 						inconsistent = true;
-						$("#save").hide();
+						//$("#save").hide();
 					}
 				});
 				$("#store").show();
@@ -641,7 +640,7 @@
 						<a class="btn-floating btn-large blue" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
 						<a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>
 					</div>
-					<div id="store" class="col s3 left-align">
+					<div id="store" class="col s2 left-align">
 						<div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
 						<div id="save"><a class="btn-floating btn-large normal black" onclick="save()" title="Save changes"><i class="material-icons">save</i></a></div>
 					</div>
