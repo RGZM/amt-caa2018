@@ -43,7 +43,8 @@
 		</style>
 		<script>
 			var CAA = {};
-			CAA.ontology = "caa2018";
+			CAA.prefix = "http://github.com/RGZM/amt-caa2018#";
+			CAA.ontology = "military";
 			CAA.graph = {};
 			CAA.edit = false;
 			CAA.thisNodes = [];
@@ -89,7 +90,7 @@
 						if (updated.edges[i].width < 0.1) {
 							updated.edges[i].hidden = true;
 						}
-						var roleWithPrefix = "http://github.com/RGZM/amt-caa2018#";
+						var roleWithPrefix = CAA.prefix;
 						if (updated.edges[i].role===roleWithPrefix+"hasDepiction") {
 							updated.edges[i].color = {color:"Crimson", highlight:"black"};
 							updated.edges[i].dashes = true;
@@ -176,10 +177,8 @@
 					if (roles[i].domain == type) {
 						// load only Allen types
 						var role = roles[i].role;
-						var caaprefix = "http://github.com/RGZM/amt-caa2018#";
-						//if (role===caaprefix+"hasDepiction" || role===caaprefix+"matchesWith" || role===caaprefix+"broaderThan") {
-							$("#role").append("<option value='"+roles[i].role+"'>"+roles[i].label+"</option>");
-						//}
+						var caaprefix = CAA.prefix;
+						$("#role").append("<option value='"+roles[i].role+"'>"+roles[i].label+"</option>");
 					}
 				}
 				$("#role").on("change",function() {
@@ -297,6 +296,7 @@
 			});
 			var switchOntology = function() {
 				CAA = {};
+				CAA.prefix = "http://github.com/RGZM/amt-caa2018#";
 				CAA.ontology = $("#ontology").val();
 				CAA.graph = {};
 				CAA.edit = true;
