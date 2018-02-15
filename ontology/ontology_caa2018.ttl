@@ -1,9 +1,10 @@
-# AMT Ontology - Leonard Edition
-# http://academic-meta-tool.xyz/ontology
-
 @prefix amt: <http://academic-meta-tool.xyz/vocab#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix caa: <http://github.com/RGZM/amt-caa2018#> .
+
+# AMT Ontology - Leonard Edition
+# http://academic-meta-tool.xyz/ontology
 
 amt:Concept rdfs:subClassOf rdfs:Class .
 amt:Role rdfs:subClassOf rdf:Property .
@@ -20,10 +21,6 @@ amt:ProductLogic rdf:type amt:Logic .
 amt:GoedelLogic rdf:type amt:Logic .
 
 # CAA2018 ontology
-
-
-@prefix caa: <https://github.com/RGZM/amt-caa2018#> .
-@prefix amt: <http://academic-meta-tool.xyz/vocab#> .
 
 # concepts
 
