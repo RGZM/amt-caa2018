@@ -32,6 +32,7 @@ var AMT = function() {
 
 	var STORE = "http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018";
 	var PREFIX = "http://academic-meta-tool.xyz/vocab#";
+    var PREFIX_INSTANCES = "http://github.com/RGZM/amt-caa2018#";
 
   var queryStore = function(query,callback) {
 		$.ajax({
@@ -290,7 +291,7 @@ var AMT = function() {
 	};
 
 	this.addIndividual = function(label,concept) {
-		var id = PREFIX+StrID();
+		var id = PREFIX_INSTANCES+StrID();
 		GRAPH.edited.nodes.push({id: id, label: label, concept: concept});
 		return id;
 	};
