@@ -42,24 +42,24 @@
 			}
 		</style>
 		<script>
-			var TIME = {};
-			TIME.ontology = "time";
-			TIME.graph = {};
-			TIME.edit = false;
-			TIME.thisNodes = [];
-			TIME.thisEdges = [];
-			TIME.inverse = false;
+			var CAA = {};
+			CAA.ontology = "caa2018";
+			CAA.graph = {};
+			CAA.edit = false;
+			CAA.thisNodes = [];
+			CAA.thisEdges = [];
+			CAA.inverse = false;
 			var update = function() {
-				if (TIME.amt) {
-					var updated = TIME.amt.getGraph(!TIME.edit,true);
-					TIME.graph.edges.clear();
-					TIME.graph.nodes.clear();
+				if (CAA.amt) {
+					var updated = CAA.amt.getGraph(!CAA.edit,true);
+					CAA.graph.edges.clear();
+					CAA.graph.nodes.clear();
 					/*
 						Hier wird spezifiziert, wie die Knoten aussehen sollen
 					*/
 					for (var i in updated.nodes) {
 						updated.nodes[i].length = 10/updated.nodes[i].width;
-						if (!TIME.edit) {
+						if (!CAA.edit) {
 							updated.nodes[i].chosen = false;
 						}
 						if (updated.nodes[i].concept.includes("Object")) {
@@ -119,17 +119,17 @@
 							console.log(updated.edges[i].role, updated.edges[i].width);
 						}
 					}
-					TIME.graph.nodes.update(updated.nodes);
-					TIME.graph.edges.update(updated.edges);
-					TIME.thisNodes = updated.nodes;
-					TIME.thisEdges = updated.edges;
+					CAA.graph.nodes.update(updated.nodes);
+					CAA.graph.edges.update(updated.edges);
+					CAA.thisNodes = updated.nodes;
+					CAA.thisEdges = updated.edges;
 				}
 			};
 			var edit = function() {
-				TIME.edit = !TIME.edit;
+				CAA.edit = !CAA.edit;
 				$(".edit").toggle();
 				$(".normal").toggle();
-				if(TIME.edit) {
+				if(CAA.edit) {
 					$("#r-but").show();
 					$("#e-but").hide();
 				} else {
@@ -139,12 +139,12 @@
 				update();
 			};
 			var cancel = function() {
-				TIME.amt.cancel();
+				CAA.amt.cancel();
 				$("#store").hide();
 				edit();
 			};
 			var save = function() {
-				TIME.amt.save(function() {
+				CAA.amt.save(function() {
 					location.reload();
 				});
 			}
@@ -152,7 +152,7 @@
 				$("#uri").val("");
 				if (id) {
 					$("#uri").val(id);
-					var graph = TIME.amt.getGraph(false,true);
+					var graph = CAA.amt.getGraph(false,true);
 					var node = false;
 					for (var i in graph.nodes) {
 						if (graph.nodes[i].id == id)
@@ -164,14 +164,14 @@
 				$("#concept").val(type);
 				$("#role").empty();
 				$("#table").empty();
-				var concepts = TIME.amt.getConcepts();
+				var concepts = CAA.amt.getConcepts();
 				for (var i in concepts) {
 					if (concepts[i].concept == type) {
 						$("#label").attr("placeholder",concepts[i].placeholder);
 					}
 				}
 				$("#role").append("<option value='' disabled selected>Rolle wählen ...</option>");
-				var roles = TIME.amt.getRoles();
+				var roles = CAA.amt.getRoles();
 				for (var i in roles) {
 					if (roles[i].domain == type) {
 						// load only Allen types
@@ -190,7 +190,7 @@
 							concept = roles[i].range;
 						}
 					}
-					var graph = TIME.amt.getGraph(false,true);
+					var graph = CAA.amt.getGraph(false,true);
 					for (var i in graph.nodes) {
 						if (graph.nodes[i].concept == concept) {
 							var w = 0;
@@ -214,7 +214,7 @@
 				var from = $("#uri").val();
 				if (from) {
 					$("#save").show();
-					if (!TIME.amt.removeIndividual(from)) {
+					if (!CAA.amt.removeIndividual(from)) {
 						console.log("Inkonsistenz vorhanden");
 						//$("#save").hide();
 					}
@@ -232,14 +232,14 @@
 				var role = $("#role").val();
 				var from = $("#uri").val();
 				if (!from) {
-					from = TIME.amt.addIndividual($("#label").val(),$("#concept").val());
+					from = CAA.amt.addIndividual($("#label").val(),$("#concept").val());
 				}
 				$("#save").show();
 				$("#table tr td input").each(function(i) {
 					var w = Math.floor(Number($(this).val()));
 					var to = $(this).attr("name");
 					var inconsistent = false;
-					if (!TIME.amt.editAssertion(role,from,to,w/100)) {
+					if (!CAA.amt.editAssertion(role,from,to,w/100)) {
 						if (!inconsistent)
 							console.log("Inkonsistenz vorhanden");
 						inconsistent = true;
@@ -252,9 +252,9 @@
 				update();
 			};
 			$(function() {
-				TIME.amt = new AMT();
-				TIME.amt.load(function() {
-					var concepts = TIME.amt.getConcepts();
+				CAA.amt = new AMT();
+				CAA.amt.load(function() {
+					var concepts = CAA.amt.getConcepts();
 					for (var i in concepts) {
 						var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\""+concepts[i].concept+"\")' title='Add "+concepts[i].label+" node'><i class='material-icons'>add"+concepts[i].label.substr(0,1)+"</i></a>");
 						$("#buttons").prepend(a);
@@ -262,12 +262,12 @@
 					$(".edit").hide();
 					$("#r-but").show();
 					$("#e-but").hide();
-					var graph = TIME.amt.getGraph(false,true);
-					TIME.graph.nodes = new vis.DataSet(graph.nodes);
-					TIME.graph.edges = new vis.DataSet(graph.edges);
-					var network = new vis.Network(document.getElementById("graph"),{nodes: TIME.graph.nodes, edges: TIME.graph.edges},{});
+					var graph = CAA.amt.getGraph(false,true);
+					CAA.graph.nodes = new vis.DataSet(graph.nodes);
+					CAA.graph.edges = new vis.DataSet(graph.edges);
+					var network = new vis.Network(document.getElementById("graph"),{nodes: CAA.graph.nodes, edges: CAA.graph.edges},{});
 					network.on("selectNode", function (params) {
-						if (TIME.edit)
+						if (CAA.edit)
 							openModal(params.nodes[0]);
 					});
 					propModal();
@@ -296,39 +296,39 @@
 				$("#store").hide();
 			});
 			var switchOntology = function() {
-				TIME = {};
-				TIME.ontology = $("#ontology").val();
-				TIME.graph = {};
-				TIME.edit = true;
-				TIME.thisNodes = [];
-				TIME.thisEdges = [];
-				TIME.amt = new AMT();
-				if (TIME.ontology==="military") {
-					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018");
-				} else if (TIME.ontology==="transport") {
-					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018a");
-				} else if (TIME.ontology==="lateenfore") {
-					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018b");
-				} else if (TIME.ontology==="sailedrowed") {
-					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018c");
-				} else if (TIME.ontology==="nero") {
-					TIME.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018d");
+				CAA = {};
+				CAA.ontology = $("#ontology").val();
+				CAA.graph = {};
+				CAA.edit = true;
+				CAA.thisNodes = [];
+				CAA.thisEdges = [];
+				CAA.amt = new AMT();
+				if (CAA.ontology==="military") {
+					CAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018");
+				} else if (CAA.ontology==="transport") {
+					CAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018a");
+				} else if (CAA.ontology==="lateenfore") {
+					CAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018b");
+				} else if (CAA.ontology==="sailedrowed") {
+					CAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018c");
+				} else if (CAA.ontology==="nero") {
+					CAA.amt.setStore("http://ls-dev.i3mainz.hs-mainz.de/rdf4j-server/repositories/amtcaa2018d");
 				}
-				console.log(TIME);
-				TIME.amt.load(function() {
-					var concepts = TIME.amt.getConcepts();
+				console.log(CAA);
+				CAA.amt.load(function() {
+					var concepts = CAA.amt.getConcepts();
 					$("#buttons .green").remove();
 					for (var i in concepts) {
 						var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\""+concepts[i].concept+"\")' title='Add "+concepts[i].label+" node'><i class='material-icons'>add "+concepts[i].label.substr(0,1)+"</i></a>");
 						$("#buttons").prepend(a);
 					}
 					$(".edit").show();
-					var graph = TIME.amt.getGraph(true);
-					TIME.graph.nodes = new vis.DataSet(graph.nodes);
-					TIME.graph.edges = new vis.DataSet(graph.edges);
-					var network = new vis.Network(document.getElementById("graph"),{nodes: TIME.graph.nodes, edges: TIME.graph.edges},{});
+					var graph = CAA.amt.getGraph(true);
+					CAA.graph.nodes = new vis.DataSet(graph.nodes);
+					CAA.graph.edges = new vis.DataSet(graph.edges);
+					var network = new vis.Network(document.getElementById("graph"),{nodes: CAA.graph.nodes, edges: CAA.graph.edges},{});
 					network.on("selectNode", function (params) {
-						if (TIME.edit)
+						if (CAA.edit)
 							openModal(params.nodes[0]);
 					});
 					update();
@@ -378,7 +378,7 @@
 			}
 			var propModal = function(close) {
 				$("#ontology").material_select();
-				$("#ontology").val(TIME.ontology);
+				$("#ontology").val(CAA.ontology);
 				if (close)
 					$("#propertiesModal").modal("close");
 				else
@@ -398,8 +398,8 @@
 			var exportData = function(type,kind) {
 				if (type==="json") {
 					var nodesAndEdges = {};
-					nodesAndEdges.nodes = TIME.thisNodes;
-					nodesAndEdges.edges = TIME.thisEdges;
+					nodesAndEdges.nodes = CAA.thisNodes;
+					nodesAndEdges.edges = CAA.thisEdges;
 					nodesAndEdges = JSON.stringify(nodesAndEdges);
 					if (nodesAndEdges.includes("Infinity")) {
 						nodesAndEdges = nodesAndEdges.replace("Infinity",1.0);
@@ -412,8 +412,8 @@
 				} else if (type==="csv") {
 					if (kind==="nodes") {
 						var nodesAndEdges = "id,label,concept\r\n";
-						for (var node in TIME.thisNodes) {
-							nodesAndEdges += TIME.thisNodes[node].id+","+TIME.thisNodes[node].label+","+TIME.thisNodes[node].concept+"\r\n";
+						for (var node in CAA.thisNodes) {
+							nodesAndEdges += CAA.thisNodes[node].id+","+CAA.thisNodes[node].label+","+CAA.thisNodes[node].concept+"\r\n";
 						}
 						// COPY TO CLIPBOARD
 						$("#hiddenclipboard").text(nodesAndEdges);
@@ -422,9 +422,9 @@
 						$("#exportModal").modal("close");
 					} else {
 						var nodesAndEdges = "from,to,role,width\r\n";
-						for (var edge in TIME.thisEdges) {
-							if (!TIME.thisEdges[edge].hidden) {
-								nodesAndEdges += TIME.thisEdges[edge].from+","+TIME.thisEdges[edge].to+","+TIME.thisEdges[edge].role+","+TIME.thisEdges[edge].width+"\r\n";
+						for (var edge in CAA.thisEdges) {
+							if (!CAA.thisEdges[edge].hidden) {
+								nodesAndEdges += CAA.thisEdges[edge].from+","+CAA.thisEdges[edge].to+","+CAA.thisEdges[edge].role+","+CAA.thisEdges[edge].width+"\r\n";
 								if (nodesAndEdges.includes("Infinity")) {
 									nodesAndEdges = nodesAndEdges.replace("Infinity",1.0);
 								}
@@ -438,16 +438,16 @@
 					}
 				} else if (type==="rdf") {
 					var nodesAndEdges = "";
-					for (var node in TIME.thisNodes) {
-						nodesAndEdges += "<"+TIME.thisNodes[node].id+"> "+"<http://www.academic-meta-tool.xyz/instanceOf>"+" <"+TIME.thisNodes[node].concept+"> .\r\n";
-						nodesAndEdges += "<"+TIME.thisNodes[node].id+"> "+"<http://www.w3.org/2000/01/rdf-schema#label>"+" \""+TIME.thisNodes[node].label+"\" .\r\n";
+					for (var node in CAA.thisNodes) {
+						nodesAndEdges += "<"+CAA.thisNodes[node].id+"> "+"<http://www.academic-meta-tool.xyz/instanceOf>"+" <"+CAA.thisNodes[node].concept+"> .\r\n";
+						nodesAndEdges += "<"+CAA.thisNodes[node].id+"> "+"<http://www.w3.org/2000/01/rdf-schema#label>"+" \""+CAA.thisNodes[node].label+"\" .\r\n";
 					}
-					for (var edge in TIME.thisEdges) {
+					for (var edge in CAA.thisEdges) {
 						var emptyNode = "_:"+StrID();
-						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>"+" <"+TIME.thisEdges[edge].from+"> .\r\n";
-						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>"+" <"+TIME.thisEdges[edge].role+"> .\r\n";
-						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>"+" <"+TIME.thisEdges[edge].to+"> .\r\n";
-						nodesAndEdges += emptyNode+" <http://www.academic-meta-tool.xyz/weight>"+" \""+TIME.thisEdges[edge].width+"\"^^<http://www.w3.org/2001/XMLSchema#integer> .\r\n";
+						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject>"+" <"+CAA.thisEdges[edge].from+"> .\r\n";
+						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate>"+" <"+CAA.thisEdges[edge].role+"> .\r\n";
+						nodesAndEdges += emptyNode+" <http://www.w3.org/1999/02/22-rdf-syntax-ns#object>"+" <"+CAA.thisEdges[edge].to+"> .\r\n";
+						nodesAndEdges += emptyNode+" <http://www.academic-meta-tool.xyz/weight>"+" \""+CAA.thisEdges[edge].width+"\"^^<http://www.w3.org/2001/XMLSchema#integer> .\r\n";
 						if (nodesAndEdges.includes("Infinity")) {
 							nodesAndEdges = nodesAndEdges.replace("Infinity",1.0);
 						}
@@ -462,42 +462,42 @@
 					var map = [];
 					var nodeIDs = [];
 					// CREATE NODE -> CREATE (shortID:Concept{label: 'text'})
-					for (var node in TIME.thisNodes) {
-						if (TIME.thisNodes[node].concept.includes("Person")) {
+					for (var node in CAA.thisNodes) {
+						if (CAA.thisNodes[node].concept.includes("Person")) {
 							var nodeItem = {};
-							nodeItem.id = TIME.thisNodes[node].id;
+							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = TIME.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
-							var cypherNode = "("+nodeItem.shortID+":Person{label: '"+TIME.thisNodes[node].label+"'})";
+							var cypherNode = "("+nodeItem.shortID+":Person{label: '"+CAA.thisNodes[node].label+"'})";
 							nodesAndEdges += "CREATE "+cypherNode+ "\r\n";
-						} else if (TIME.thisNodes[node].concept.includes("Interest")) {
+						} else if (CAA.thisNodes[node].concept.includes("Interest")) {
 							var nodeItem = {};
-							nodeItem.id = TIME.thisNodes[node].id;
+							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = TIME.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
-							var cypherNode = "("+nodeItem.shortID+":Interest{label: '"+TIME.thisNodes[node].label+"'})";
+							var cypherNode = "("+nodeItem.shortID+":Interest{label: '"+CAA.thisNodes[node].label+"'})";
 							nodesAndEdges += "CREATE "+cypherNode+ "\r\n";
 						}
 					}
 					// MERGE NODES AS EDGE -> MERGE (shortID)-[:ROLE{width:width}]->(shortID)
-					for (var edge in TIME.thisEdges) {
-						if (TIME.thisEdges[edge].role.includes("connectedWith") && !TIME.thisEdges[edge].hidden) {
+					for (var edge in CAA.thisEdges) {
+						if (CAA.thisEdges[edge].role.includes("connectedWith") && !CAA.thisEdges[edge].hidden) {
 							var cypherEdge = "(*)-[:CONNECTED_WITH{width:%}]->(**)";
 							for (var item in map) {
-								if (map[item].id===TIME.thisEdges[edge].from) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
 								}
-								if (map[item].id===TIME.thisEdges[edge].to) {
+								if (map[item].id===CAA.thisEdges[edge].to) {
 									cypherEdge = cypherEdge.replace("**",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
@@ -505,19 +505,19 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (TIME.thisEdges[edge].role.includes("interestedIn") && !TIME.thisEdges[edge].hidden) {
+						if (CAA.thisEdges[edge].role.includes("interestedIn") && !CAA.thisEdges[edge].hidden) {
 							var cypherEdge = "(*)-[:INTERESTED_IN{width:%}]->(**)";
 							for (var item in map) {
-								if (map[item].id===TIME.thisEdges[edge].from) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
 								}
-								if (map[item].id===TIME.thisEdges[edge].to) {
+								if (map[item].id===CAA.thisEdges[edge].to) {
 									cypherEdge = cypherEdge.replace("**",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
@@ -525,19 +525,19 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (TIME.thisEdges[edge].role.includes("interestOf") && !TIME.thisEdges[edge].hidden) {
+						if (CAA.thisEdges[edge].role.includes("interestOf") && !CAA.thisEdges[edge].hidden) {
 							var cypherEdge = "(*)-[:INTEREST_OF{width:%}]->(**)";
 							for (var item in map) {
-								if (map[item].id===TIME.thisEdges[edge].from) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
 								}
-								if (map[item].id===TIME.thisEdges[edge].to) {
+								if (map[item].id===CAA.thisEdges[edge].to) {
 									cypherEdge = cypherEdge.replace("**",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
@@ -545,19 +545,19 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (TIME.thisEdges[edge].role.includes("subInterestOf") && !TIME.thisEdges[edge].hidden) {
+						if (CAA.thisEdges[edge].role.includes("subInterestOf") && !CAA.thisEdges[edge].hidden) {
 							var cypherEdge = "(*)-[:SUB_INTEREST_OF{width:%}]->(**)";
 							for (var item in map) {
-								if (map[item].id===TIME.thisEdges[edge].from) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
 								}
-								if (map[item].id===TIME.thisEdges[edge].to) {
+								if (map[item].id===CAA.thisEdges[edge].to) {
 									cypherEdge = cypherEdge.replace("**",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
@@ -565,19 +565,19 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (TIME.thisEdges[edge].role.includes("superInterestOf") && !TIME.thisEdges[edge].hidden) {
+						if (CAA.thisEdges[edge].role.includes("superInterestOf") && !CAA.thisEdges[edge].hidden) {
 							var cypherEdge = "(*)-[:SUPER_INTEREST_OF{width:%}]->(**)";
 							for (var item in map) {
-								if (map[item].id===TIME.thisEdges[edge].from) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
 								}
-								if (map[item].id===TIME.thisEdges[edge].to) {
+								if (map[item].id===CAA.thisEdges[edge].to) {
 									cypherEdge = cypherEdge.replace("**",map[item].shortID);
-									cypherEdge = cypherEdge.replace("%",TIME.thisEdges[edge].width);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
 									if (cypherEdge.includes("Infinity")) {
 										cypherEdge = cypherEdge.replace("Infinity",1.0);
 									}
@@ -602,10 +602,10 @@
 			var loadJSONGraphInApp = function() {
 				var json = JSON.parse($("#json").val());
 				for (var node in json.nodes) {
-					TIME.amt.addExistingIndividual(json.nodes[node].id,json.nodes[node].label,json.nodes[node].concept);
+					CAA.amt.addExistingIndividual(json.nodes[node].id,json.nodes[node].label,json.nodes[node].concept);
 				}
 				for (var edge in json.edges) {
-					TIME.amt.addExistingAssertion(json.edges[edge].id,json.edges[edge].role,json.edges[edge].from,json.edges[edge].to,json.edges[edge].width);
+					CAA.amt.addExistingAssertion(json.edges[edge].id,json.edges[edge].role,json.edges[edge].from,json.edges[edge].to,json.edges[edge].width);
 				}
 				update();
 				$("#loadModal").modal("close");
