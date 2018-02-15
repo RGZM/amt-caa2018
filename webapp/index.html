@@ -82,26 +82,14 @@
 					/*
 						Hier wird spezifiziert wie die Kanten aussehen sollen, welche angezeigt werden sollen, etc
 					*/
-					var hiddenInverse = true;
-					/*var hiddenInverse = true;
-					if (TIME.edit) {
-						hiddenInverse = false;
-					} else {
-						if ($('input[name=group1]:checked').val()==="showAllInverse") {
-							hiddenInverse = false;
-						} else {
-							hiddenInverse = true;
-						}
-					}*/
+					console.info("load edges");
 					for (var i in updated.edges) {
 						updated.edges[i].arrowStrikethrough = false;
 						updated.edges[i].chosen = false;
-						console.log(updated.edges[i].width);
-						if (updated.edges[i].width < 0.1 || updated.edges[i].width === 0) {
+						if (updated.edges[i].width < 0.1) {
 							updated.edges[i].hidden = true;
-							//console.log(updated.edges[i]);
 						}
-						var roleWithPrefix = "https://github.com/RGZM/amt-caa2018#";
+						var roleWithPrefix = "http://github.com/RGZM/amt-caa2018#";
 						if (updated.edges[i].role===roleWithPrefix+"hasDepiction") {
 							updated.edges[i].color = {color:"Crimson", highlight:"black"};
 							updated.edges[i].dashes = true;
@@ -126,6 +114,9 @@
 						} else {
 							updated.edges[i].color = {color:"black", highlight:"black"};
 							updated.edges[i].dashes = true;
+						}
+						if (!updated.edges[i].hidden) {
+							console.log(updated.edges[i].role, updated.edges[i].width);
 						}
 					}
 					TIME.graph.nodes.update(updated.nodes);
@@ -185,10 +176,10 @@
 					if (roles[i].domain == type) {
 						// load only Allen types
 						var role = roles[i].role;
-						var caaprefix = "https://github.com/RGZM/amt-caa2018#";
-						if (role===caaprefix+"hasDepiction" || role===caaprefix+"matchesWith" || role===caaprefix+"broaderThan") {
+						var caaprefix = "http://github.com/RGZM/amt-caa2018#";
+						//if (role===caaprefix+"hasDepiction" || role===caaprefix+"matchesWith" || role===caaprefix+"broaderThan") {
 							$("#role").append("<option value='"+roles[i].role+"'>"+roles[i].label+"</option>");
-						}
+						//}
 					}
 				}
 				$("#role").on("change",function() {
@@ -627,9 +618,9 @@
 		<div id="footer" class="page-footer col s12 blue lighten-3">
 			<div class="container">
 				<div class="row">
-					<div id="footertitle" class="col s2 left-align">
+					<!--<div id="footertitle" class="col s2 left-align">
 						<b class="description">Amt.CAA2018.</b>
-					</div>
+					</div>-->
 					<div id="props" class="col s3 left-align">
 						<a class="btn-floating btn-large black" onclick="info()" title="about AMT"><i class="material-icons">info_outline</i></a>
 						<a class="btn-floating btn-large black" onclick="propModal()" title="switch example"><i class="material-icons">sync</i></a>
@@ -640,7 +631,7 @@
 						<a class="btn-floating btn-large blue" id="r-but" onclick="edit()" title="show reasoning data"><i class="material-icons">flash_on</i></a>
 						<a class="btn-floating btn-large normal blue" id="e-but" onclick="edit()" title="show input data"><i class="material-icons">input</i></a>
 					</div>
-					<div id="store" class="col s2 left-align">
+					<div id="store" class="col s4 left-align">
 						<div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
 						<div id="save"><a class="btn-floating btn-large normal black" onclick="save()" title="Save changes"><i class="material-icons">save</i></a></div>
 					</div>
