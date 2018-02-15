@@ -468,7 +468,7 @@
 							var nodeItem = {};
 							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace(CAA.prefix,"");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
 							var cypherNode = "("+nodeItem.shortID+":Object{label: '"+CAA.thisNodes[node].label+"'})";
@@ -477,7 +477,7 @@
 							var nodeItem = {};
 							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace(CAA.prefix,"");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
 							var cypherNode = "("+nodeItem.shortID+":Keyword{label: '"+CAA.thisNodes[node].label+"'})";
@@ -486,7 +486,7 @@
 							var nodeItem = {};
 							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace(CAA.prefix,"");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
 							var cypherNode = "("+nodeItem.shortID+":Concept{label: '"+CAA.thisNodes[node].label+"'})";
