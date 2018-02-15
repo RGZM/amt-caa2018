@@ -72,9 +72,10 @@
 							updated.nodes[i].shape = "image";
 							updated.nodes[i].image = "img/keyword.png";
 						} else if (updated.nodes[i].concept.includes("Concept")) {
-							updated.nodes[i].color = {background:'orange', border:'orange', highlight:{background:'white', border:'orange'}};
-							updated.nodes[i].shape = "image";
-							updated.nodes[i].image = "img/concept.png";
+							updated.nodes[i].color = {background:'#99d6ff', border:'#99d6ff', highlight:{background:'white', border:'#99d6ff'}};
+							updated.nodes[i].shape = "box";
+							var split = updated.nodes[i].label.split("|");
+							updated.nodes[i].label = split[1] + "\n" + split[0];
 						} else {
 							updated.nodes[i].color = {background:'grey', border:'black', highlight:{background:'white',border:'black'}};
 							updated.nodes[i].shape = "box";
@@ -87,7 +88,7 @@
 					for (var i in updated.edges) {
 						updated.edges[i].arrowStrikethrough = false;
 						updated.edges[i].chosen = false;
-						if (updated.edges[i].width < 0.1) {
+						if (updated.edges[i].width < 0.01) {
 							updated.edges[i].hidden = true;
 						}
 						var roleWithPrefix = CAA.prefix;
