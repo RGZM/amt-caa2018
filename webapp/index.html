@@ -463,30 +463,39 @@
 					var nodeIDs = [];
 					// CREATE NODE -> CREATE (shortID:Concept{label: 'text'})
 					for (var node in CAA.thisNodes) {
-						if (CAA.thisNodes[node].concept.includes("Person")) {
+						if (CAA.thisNodes[node].concept.includes("Object")) {
 							var nodeItem = {};
 							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
-							var cypherNode = "("+nodeItem.shortID+":Person{label: '"+CAA.thisNodes[node].label+"'})";
+							var cypherNode = "("+nodeItem.shortID+":Object{label: '"+CAA.thisNodes[node].label+"'})";
 							nodesAndEdges += "CREATE "+cypherNode+ "\r\n";
-						} else if (CAA.thisNodes[node].concept.includes("Interest")) {
+						} else if (CAA.thisNodes[node].concept.includes("Keyword")) {
 							var nodeItem = {};
 							nodeItem.id = CAA.thisNodes[node].id;
 							nodeItem.node = cypherNode;
-							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://www.academic-meta-tool.xyz/","");
+							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
 							nodeIDs.push(nodeItem.shortID);
 							map.push(nodeItem);
-							var cypherNode = "("+nodeItem.shortID+":Interest{label: '"+CAA.thisNodes[node].label+"'})";
+							var cypherNode = "("+nodeItem.shortID+":Keyword{label: '"+CAA.thisNodes[node].label+"'})";
+							nodesAndEdges += "CREATE "+cypherNode+ "\r\n";
+						} else if (CAA.thisNodes[node].concept.includes("Concept")) {
+							var nodeItem = {};
+							nodeItem.id = CAA.thisNodes[node].id;
+							nodeItem.node = cypherNode;
+							nodeItem.shortID = CAA.thisNodes[node].id.replace("http://academic-meta-tool.xyz/vocab#","");
+							nodeIDs.push(nodeItem.shortID);
+							map.push(nodeItem);
+							var cypherNode = "("+nodeItem.shortID+":Concept{label: '"+CAA.thisNodes[node].label+"'})";
 							nodesAndEdges += "CREATE "+cypherNode+ "\r\n";
 						}
 					}
 					// MERGE NODES AS EDGE -> MERGE (shortID)-[:ROLE{width:width}]->(shortID)
 					for (var edge in CAA.thisEdges) {
-						if (CAA.thisEdges[edge].role.includes("connectedWith") && !CAA.thisEdges[edge].hidden) {
-							var cypherEdge = "(*)-[:CONNECTED_WITH{width:%}]->(**)";
+						if (CAA.thisEdges[edge].role.includes("hasDepiction") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:HAS_DEPICTION{width:%}]->(**)";
 							for (var item in map) {
 								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
@@ -505,8 +514,8 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (CAA.thisEdges[edge].role.includes("interestedIn") && !CAA.thisEdges[edge].hidden) {
-							var cypherEdge = "(*)-[:INTERESTED_IN{width:%}]->(**)";
+						if (CAA.thisEdges[edge].role.includes("isDepictionOf") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:IS_DEPICTION_OF{width:%}]->(**)";
 							for (var item in map) {
 								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
@@ -525,8 +534,8 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (CAA.thisEdges[edge].role.includes("interestOf") && !CAA.thisEdges[edge].hidden) {
-							var cypherEdge = "(*)-[:INTEREST_OF{width:%}]->(**)";
+						if (CAA.thisEdges[edge].role.includes("matchesWith") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:MATCHES_WITH{width:%}]->(**)";
 							for (var item in map) {
 								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
@@ -545,8 +554,8 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (CAA.thisEdges[edge].role.includes("subInterestOf") && !CAA.thisEdges[edge].hidden) {
-							var cypherEdge = "(*)-[:SUB_INTEREST_OF{width:%}]->(**)";
+						if (CAA.thisEdges[edge].role.includes("matchedBy") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:MATCHED_BY{width:%}]->(**)";
 							for (var item in map) {
 								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
@@ -565,8 +574,28 @@
 							}
 							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
 						}
-						if (CAA.thisEdges[edge].role.includes("superInterestOf") && !CAA.thisEdges[edge].hidden) {
-							var cypherEdge = "(*)-[:SUPER_INTEREST_OF{width:%}]->(**)";
+						if (CAA.thisEdges[edge].role.includes("broaderThan") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:BROADER_THAN{width:%}]->(**)";
+							for (var item in map) {
+								if (map[item].id===CAA.thisEdges[edge].from) {
+									cypherEdge = cypherEdge.replace("*",map[item].shortID);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
+									if (cypherEdge.includes("Infinity")) {
+										cypherEdge = cypherEdge.replace("Infinity",1.0);
+									}
+								}
+								if (map[item].id===CAA.thisEdges[edge].to) {
+									cypherEdge = cypherEdge.replace("**",map[item].shortID);
+									cypherEdge = cypherEdge.replace("%",CAA.thisEdges[edge].width);
+									if (cypherEdge.includes("Infinity")) {
+										cypherEdge = cypherEdge.replace("Infinity",1.0);
+									}
+								}
+							}
+							nodesAndEdges += "MERGE "+cypherEdge+ "\r\n";
+						}
+						if (CAA.thisEdges[edge].role.includes("narrowerThan") && !CAA.thisEdges[edge].hidden) {
+							var cypherEdge = "(*)-[:NARROWER_THAN{width:%}]->(**)";
 							for (var item in map) {
 								if (map[item].id===CAA.thisEdges[edge].from) {
 									cypherEdge = cypherEdge.replace("*",map[item].shortID);
