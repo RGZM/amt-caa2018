@@ -1,0 +1,128 @@
+{
+	"nodes": [{
+		"id": "http://github.com/RGZM/amt-caa2018#ZSEUNtIjPcnS",
+		"label": "O41650",
+		"concept": "http://github.com/RGZM/amt-caa2018#Object",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "Crimson",
+			"border": "Crimson",
+			"highlight": {
+				"background": "white",
+				"border": "red"
+			}
+		},
+		"shape": "image",
+		"image": "img/O41650.jpg"
+	}, {
+		"id": "http://github.com/RGZM/amt-caa2018#qbRuPPMYWvOW",
+		"label": "rowed",
+		"concept": "http://github.com/RGZM/amt-caa2018#Keyword",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "CornflowerBlue",
+			"border": "CornflowerBlue",
+			"highlight": {
+				"background": "white",
+				"border": "blue"
+			}
+		},
+		"shape": "image",
+		"image": "img/keyword.png"
+	}, {
+		"id": "http://github.com/RGZM/amt-caa2018#uhzipHSzrLpp",
+		"label": "sailed",
+		"concept": "http://github.com/RGZM/amt-caa2018#Keyword",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "CornflowerBlue",
+			"border": "CornflowerBlue",
+			"highlight": {
+				"background": "white",
+				"border": "blue"
+			}
+		},
+		"shape": "image",
+		"image": "img/keyword.png"
+	}],
+	"edges": [{
+		"role": "http://github.com/RGZM/amt-caa2018#hasDepiction",
+		"from": "http://github.com/RGZM/amt-caa2018#ZSEUNtIjPcnS",
+		"to": "http://github.com/RGZM/amt-caa2018#uhzipHSzrLpp",
+		"width": "0.5",
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "black",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "Crimson",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "1f2ea883-7d82-4eae-b0fd-22f6c4fce8b0"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#hasDepiction",
+		"from": "http://github.com/RGZM/amt-caa2018#ZSEUNtIjPcnS",
+		"to": "http://github.com/RGZM/amt-caa2018#qbRuPPMYWvOW",
+		"width": "0.5",
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "black",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "Crimson",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "489cdbfe-2069-4544-855d-7e2c6cba230d"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#isDepictionOf",
+		"from": "http://github.com/RGZM/amt-caa2018#uhzipHSzrLpp",
+		"to": "http://github.com/RGZM/amt-caa2018#ZSEUNtIjPcnS",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "61aea695-3b46-454d-9d68-ef15fe086c0c"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#isDepictionOf",
+		"from": "http://github.com/RGZM/amt-caa2018#qbRuPPMYWvOW",
+		"to": "http://github.com/RGZM/amt-caa2018#ZSEUNtIjPcnS",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "6e51ab3a-0b46-4b06-82a9-d33a8990e5d3"
+	}]
+}

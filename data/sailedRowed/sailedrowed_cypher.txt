@@ -1,0 +1,6 @@
+CREATE (ZSEUNtIjPcnS:Object{label: 'O41650'})
+CREATE (qbRuPPMYWvOW:Keyword{label: 'rowed'})
+CREATE (uhzipHSzrLpp:Keyword{label: 'sailed'})
+MERGE (ZSEUNtIjPcnS)-[:HAS_DEPICTION{width:0.5}]->(uhzipHSzrLpp)
+MERGE (ZSEUNtIjPcnS)-[:HAS_DEPICTION{width:0.5}]->(qbRuPPMYWvOW)
+RETURN ZSEUNtIjPcnS,qbRuPPMYWvOW,uhzipHSzrLpp
