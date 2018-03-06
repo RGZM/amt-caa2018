@@ -1,9 +1,6 @@
 id,label,concept
-http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,SLOOP OF WAR
-eh_tmc:100457,http://github.com/RGZM/amt-caa2018#Concept
-http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,MARITIME CRAFT
-eh_tmc:100394,http://github.com/RGZM/amt-caa2018#Concept
-http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,WARSHIP
-eh_tmc:100490,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,SLOOP OF WAR|eh_tmc:100457,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,MARITIME CRAFT|eh_tmc:100394,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,WARSHIP|eh_tmc:100490,http://github.com/RGZM/amt-caa2018#Concept
 http://github.com/RGZM/amt-caa2018#TAQMEDogVvEg,military Vessel,http://github.com/RGZM/amt-caa2018#Keyword
 http://github.com/RGZM/amt-caa2018#DBJcTlwyhrQu,NeumagenMonument1,http://github.com/RGZM/amt-caa2018#Object
