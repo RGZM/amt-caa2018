@@ -1,0 +1,11 @@
+from,to,role,width
+http://github.com/RGZM/amt-caa2018#DBJcTlwyhrQu,http://github.com/RGZM/amt-caa2018#TAQMEDogVvEg,http://github.com/RGZM/amt-caa2018#hasDepiction,0.6
+http://github.com/RGZM/amt-caa2018#TAQMEDogVvEg,http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,http://github.com/RGZM/amt-caa2018#matchesWith,0.8
+http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,http://github.com/RGZM/amt-caa2018#broaderThan,0.9
+http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,http://github.com/RGZM/amt-caa2018#broaderThan,0.9
+http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,http://github.com/RGZM/amt-caa2018#broaderThan,1
+http://github.com/RGZM/amt-caa2018#DBJcTlwyhrQu,http://github.com/RGZM/amt-caa2018#UGprugrYBPvk,http://github.com/RGZM/amt-caa2018#matchesWith,0.48
+http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,http://github.com/RGZM/amt-caa2018#TAQMEDogVvEg,http://github.com/RGZM/amt-caa2018#broaderThan,0.7200000000000001
+http://github.com/RGZM/amt-caa2018#vvHNQKmBpapl,http://github.com/RGZM/amt-caa2018#DBJcTlwyhrQu,http://github.com/RGZM/amt-caa2018#broaderThan,0.432
+http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,http://github.com/RGZM/amt-caa2018#TAQMEDogVvEg,http://github.com/RGZM/amt-caa2018#broaderThan,0.7200000000000001
+http://github.com/RGZM/amt-caa2018#UMUlcoEzQirv,http://github.com/RGZM/amt-caa2018#DBJcTlwyhrQu,http://github.com/RGZM/amt-caa2018#broaderThan,0.432

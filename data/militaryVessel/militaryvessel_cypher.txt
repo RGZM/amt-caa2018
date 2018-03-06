@@ -1,0 +1,19 @@
+CREATE (UGprugrYBPvk:Concept{label: 'SLOOP OF WAR
+eh_tmc:100457'})
+CREATE (UMUlcoEzQirv:Concept{label: 'MARITIME CRAFT
+eh_tmc:100394'})
+CREATE (vvHNQKmBpapl:Concept{label: 'WARSHIP
+eh_tmc:100490'})
+CREATE (TAQMEDogVvEg:Keyword{label: 'military Vessel'})
+CREATE (DBJcTlwyhrQu:Object{label: 'NeumagenMonument1'})
+MERGE (DBJcTlwyhrQu)-[:HAS_DEPICTION{width:0.6}]->(TAQMEDogVvEg)
+MERGE (TAQMEDogVvEg)-[:MATCHES_WITH{width:0.8}]->(UGprugrYBPvk)
+MERGE (vvHNQKmBpapl)-[:BROADER_THAN{width:0.9}]->(UGprugrYBPvk)
+MERGE (UMUlcoEzQirv)-[:BROADER_THAN{width:0.9}]->(UGprugrYBPvk)
+MERGE (UMUlcoEzQirv)-[:BROADER_THAN{width:1}]->(vvHNQKmBpapl)
+MERGE (DBJcTlwyhrQu)-[:MATCHES_WITH{width:0.48}]->(UGprugrYBPvk)
+MERGE (vvHNQKmBpapl)-[:BROADER_THAN{width:0.7200000000000001}]->(TAQMEDogVvEg)
+MERGE (vvHNQKmBpapl)-[:BROADER_THAN{width:0.432}]->(DBJcTlwyhrQu)
+MERGE (UMUlcoEzQirv)-[:BROADER_THAN{width:0.7200000000000001}]->(TAQMEDogVvEg)
+MERGE (UMUlcoEzQirv)-[:BROADER_THAN{width:0.432}]->(DBJcTlwyhrQu)
+RETURN UGprugrYBPvk,UMUlcoEzQirv,vvHNQKmBpapl,TAQMEDogVvEg,DBJcTlwyhrQu
