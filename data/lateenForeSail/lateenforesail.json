@@ -1,0 +1,128 @@
+{
+	"nodes": [{
+		"id": "http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro",
+		"label": "NarbonneRelief7",
+		"concept": "http://github.com/RGZM/amt-caa2018#Object",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "Crimson",
+			"border": "Crimson",
+			"highlight": {
+				"background": "white",
+				"border": "red"
+			}
+		},
+		"shape": "image",
+		"image": "img/NarbonneRelief7.jpg"
+	}, {
+		"id": "http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT",
+		"label": "fore sail",
+		"concept": "http://github.com/RGZM/amt-caa2018#Keyword",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "CornflowerBlue",
+			"border": "CornflowerBlue",
+			"highlight": {
+				"background": "white",
+				"border": "blue"
+			}
+		},
+		"shape": "image",
+		"image": "img/keyword.png"
+	}, {
+		"id": "http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb",
+		"label": "lateen sail",
+		"concept": "http://github.com/RGZM/amt-caa2018#Keyword",
+		"length": null,
+		"chosen": false,
+		"color": {
+			"background": "CornflowerBlue",
+			"border": "CornflowerBlue",
+			"highlight": {
+				"background": "white",
+				"border": "blue"
+			}
+		},
+		"shape": "image",
+		"image": "img/keyword.png"
+	}],
+	"edges": [{
+		"role": "http://github.com/RGZM/amt-caa2018#hasDepiction",
+		"from": "http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro",
+		"to": "http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT",
+		"width": "0.01",
+		"label": 0,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "black",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "Crimson",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "1ab54354-17b1-41e2-841d-21c0421e7635"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#hasDepiction",
+		"from": "http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro",
+		"to": "http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb",
+		"width": "0.99",
+		"label": 0.9,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "black",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "Crimson",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "64b9d368-97ec-4625-8e63-e3d5270b45a3"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#isDepictionOf",
+		"from": "http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT",
+		"to": "http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro",
+		"width": "0.01",
+		"label": 0,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "8a147cb2-845c-4701-b4d0-f22290425ce6"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#isDepictionOf",
+		"from": "http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb",
+		"to": "http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro",
+		"width": "0.99",
+		"label": 0.9,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "6eb05bb5-1835-4433-882e-bac2b8dd6ef9"
+	}]
+}

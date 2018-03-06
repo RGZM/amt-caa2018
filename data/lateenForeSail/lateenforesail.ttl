@@ -1,0 +1,22 @@
+<http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> <http://www.academic-meta-tool.xyz/instanceOf> <http://github.com/RGZM/amt-caa2018#Object> .
+<http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> <http://www.w3.org/2000/01/rdf-schema#label> "NarbonneRelief7" .
+<http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT> <http://www.academic-meta-tool.xyz/instanceOf> <http://github.com/RGZM/amt-caa2018#Keyword> .
+<http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT> <http://www.w3.org/2000/01/rdf-schema#label> "fore sail" .
+<http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb> <http://www.academic-meta-tool.xyz/instanceOf> <http://github.com/RGZM/amt-caa2018#Keyword> .
+<http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb> <http://www.w3.org/2000/01/rdf-schema#label> "lateen sail" .
+_:MnTmnEcpTZFq <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> .
+_:MnTmnEcpTZFq <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://github.com/RGZM/amt-caa2018#hasDepiction> .
+_:MnTmnEcpTZFq <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT> .
+_:MnTmnEcpTZFq <http://www.academic-meta-tool.xyz/weight> "0.01"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:IokuKFwtvkZb <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> .
+_:IokuKFwtvkZb <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://github.com/RGZM/amt-caa2018#hasDepiction> .
+_:IokuKFwtvkZb <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb> .
+_:IokuKFwtvkZb <http://www.academic-meta-tool.xyz/weight> "0.99"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:zVIzpoJPMOIo <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://github.com/RGZM/amt-caa2018#bzyAcTcAcLpT> .
+_:zVIzpoJPMOIo <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://github.com/RGZM/amt-caa2018#isDepictionOf> .
+_:zVIzpoJPMOIo <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> .
+_:zVIzpoJPMOIo <http://www.academic-meta-tool.xyz/weight> "0.01"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:muuKHmTMjhvP <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://github.com/RGZM/amt-caa2018#mHlapdFmMgmb> .
+_:muuKHmTMjhvP <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://github.com/RGZM/amt-caa2018#isDepictionOf> .
+_:muuKHmTMjhvP <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://github.com/RGZM/amt-caa2018#aTmSgIxpjOro> .
+_:muuKHmTMjhvP <http://www.academic-meta-tool.xyz/weight> "0.99"^^<http://www.w3.org/2001/XMLSchema#integer> .
