@@ -1,9 +1,6 @@
 id,label,concept
-http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu,Roman Emperor
-nomisma:roman_emperor,http://github.com/RGZM/amt-caa2018#Concept
-http://github.com/RGZM/amt-caa2018#UPpbHreANlVf,Nero
-nomisma:nero,http://github.com/RGZM/amt-caa2018#Concept
-http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK,Roman Numismatics
-nomisma:roman_numismatics,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu,Roman Emperor|nomisma:roman_emperor,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#UPpbHreANlVf,Nero|nomisma:nero,http://github.com/RGZM/amt-caa2018#Concept
+http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK,Roman Numismatics|nomisma:roman_numismatics,http://github.com/RGZM/amt-caa2018#Concept
 http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw,Nero,http://github.com/RGZM/amt-caa2018#Keyword
 http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt,O41485,http://github.com/RGZM/amt-caa2018#Object
