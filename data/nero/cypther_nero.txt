@@ -1,0 +1,13 @@
+CREATE (TLBCMNduQxGu:Concept{label: 'Roman Emperor
+nomisma:roman_emperor'})
+CREATE (UPpbHreANlVf:Concept{label: 'Nero
+nomisma:nero'})
+CREATE (aXrGNIhfOkTK:Concept{label: 'Roman Numismatics
+nomisma:roman_numismatics'})
+CREATE (HUXBiXUKftmw:Keyword{label: 'Nero'})
+CREATE (EBhooBcZjIqt:Object{label: 'O41485'})
+MERGE (TLBCMNduQxGu)-[:BROADER_THAN{width:0.8}]->(UPpbHreANlVf)
+MERGE (aXrGNIhfOkTK)-[:BROADER_THAN{width:0.5}]->(UPpbHreANlVf)
+MERGE (EBhooBcZjIqt)-[:HAS_DEPICTION{width:1}]->(HUXBiXUKftmw)
+MERGE (HUXBiXUKftmw)-[:MATCHES_WITH{width:1}]->(UPpbHreANlVf)
+RETURN TLBCMNduQxGu,UPpbHreANlVf,aXrGNIhfOkTK,HUXBiXUKftmw,EBhooBcZjIqt
