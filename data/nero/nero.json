@@ -4,6 +4,7 @@
 		"label": "Roman Emperor\nnomisma:roman_emperor",
 		"concept": "http://github.com/RGZM/amt-caa2018#Concept",
 		"length": null,
+		"chosen": false,
 		"color": {
 			"background": "#99d6ff",
 			"border": "#99d6ff",
@@ -18,6 +19,7 @@
 		"label": "Nero\nnomisma:nero",
 		"concept": "http://github.com/RGZM/amt-caa2018#Concept",
 		"length": null,
+		"chosen": false,
 		"color": {
 			"background": "#99d6ff",
 			"border": "#99d6ff",
@@ -32,6 +34,7 @@
 		"label": "Roman Numismatics\nnomisma:roman_numismatics",
 		"concept": "http://github.com/RGZM/amt-caa2018#Concept",
 		"length": null,
+		"chosen": false,
 		"color": {
 			"background": "#99d6ff",
 			"border": "#99d6ff",
@@ -46,6 +49,7 @@
 		"label": "Nero",
 		"concept": "http://github.com/RGZM/amt-caa2018#Keyword",
 		"length": null,
+		"chosen": false,
 		"color": {
 			"background": "CornflowerBlue",
 			"border": "CornflowerBlue",
@@ -61,6 +65,7 @@
 		"label": "O41485",
 		"concept": "http://github.com/RGZM/amt-caa2018#Object",
 		"length": null,
+		"chosen": false,
 		"color": {
 			"background": "Crimson",
 			"border": "Crimson",
@@ -93,7 +98,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "7b608894-5ed0-4b49-b524-79408afcb4cc"
+		"id": "766d5e49-d780-4273-8ff1-9aea762ae76d"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
 		"from": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
@@ -116,7 +121,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "fc346fd8-c502-4284-9616-5aa25ed6f768"
+		"id": "2ffb76aa-bb8b-4e93-963e-4939b3b57931"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
 		"from": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
@@ -139,7 +144,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "d8165607-c8d0-490c-b7a7-e153dc106a8c"
+		"id": "c9b76f83-ae17-4042-898e-537a9b5a339e"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
 		"from": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
@@ -161,7 +166,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "526fa54d-b484-48ad-a560-8fe6b7dca1f1"
+		"id": "63eae829-b7d4-4418-80fb-1e6ec3c4ef9f"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
 		"from": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
@@ -184,7 +189,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "a96c755e-f2ab-4cbf-9246-7282051fb8f9"
+		"id": "baa52301-137c-416a-9de5-8497f5da7180"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#hasDepiction",
 		"from": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
@@ -206,7 +211,7 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "bfc267dc-bd09-4546-a9c9-dce06e9caad2"
+		"id": "7072c7cb-813c-4c25-861f-f3c961c12079"
 	}, {
 		"role": "http://github.com/RGZM/amt-caa2018#matchesWith",
 		"from": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
@@ -228,6 +233,260 @@
 		"dashes": true,
 		"length": 200,
 		"smooth": false,
-		"id": "0b2cc1ae-b6d2-4fe1-ae75-ee6807ad1da8"
+		"id": "061c369d-65da-4500-bb7d-a0d5d6666cd6"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#isDepictionOf",
+		"from": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"to": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"width": 1,
+		"label": 1,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "959a57e0-83ca-4ece-9563-7d089645d713"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#UPpbHreANlVf",
+		"to": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
+		"width": 0.8,
+		"label": 0.8,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "6606392c-ac60-4dcb-868a-1bbcd8a760e8"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#UPpbHreANlVf",
+		"to": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "25f20224-ccf4-4e73-af8f-4dad2c3a3900"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#matchedBy",
+		"from": "http://github.com/RGZM/amt-caa2018#UPpbHreANlVf",
+		"to": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"width": 1,
+		"label": 1,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "e0260bb5-ba8b-4f12-802d-8515671e4878"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#matchesWith",
+		"from": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"to": "http://github.com/RGZM/amt-caa2018#UPpbHreANlVf",
+		"width": 1,
+		"label": 1,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "CornflowerBlue",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "77ef4f55-567c-40e7-b912-3265f3313e36"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"to": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
+		"width": 0.8,
+		"label": 0.8,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "aab0777f-7fae-4f86-99e7-544cf6bd12c4"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"to": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "671e58fc-5114-44ec-8785-388190028ff5"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"to": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
+		"width": 0.8,
+		"label": 0.8,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "622d33f3-70f1-4ba2-a954-f099c6c3e5bd"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#narrowerThan",
+		"from": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"to": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "91b0591a-c6ff-4681-b54a-6466ce13b41d"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
+		"from": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
+		"to": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"width": 0.8,
+		"label": 0.8,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "DarkGreen",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "0b3e081c-41f9-4f78-99ac-a2f6f21e92cc"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
+		"from": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
+		"to": "http://github.com/RGZM/amt-caa2018#HUXBiXUKftmw",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "DarkGreen",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "94a5e9ef-d248-4bc0-b2d0-77a6ec8ffb1b"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
+		"from": "http://github.com/RGZM/amt-caa2018#TLBCMNduQxGu",
+		"to": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"width": 0.8,
+		"label": 0.8,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "DarkGreen",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "cf60fd61-a707-47d1-9e48-f9ff4b87de1a"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#broaderThan",
+		"from": "http://github.com/RGZM/amt-caa2018#aXrGNIhfOkTK",
+		"to": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"width": 0.5,
+		"label": 0.5,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"color": {
+			"color": "DarkGreen",
+			"highlight": "black"
+		},
+		"dashes": true,
+		"length": 200,
+		"smooth": false,
+		"id": "12e0e459-14ed-4dc4-8ce8-e80359679e77"
+	}, {
+		"role": "http://github.com/RGZM/amt-caa2018#matchedBy",
+		"from": "http://github.com/RGZM/amt-caa2018#UPpbHreANlVf",
+		"to": "http://github.com/RGZM/amt-caa2018#EBhooBcZjIqt",
+		"width": 1,
+		"label": 1,
+		"font": {
+			"align": "middle",
+			"size": 10,
+			"color": "red",
+			"face": "arial"
+		},
+		"arrowStrikethrough": false,
+		"chosen": false,
+		"hidden": true,
+		"id": "05748d23-d27e-47e4-ad16-eacdf10dd8b7"
 	}]
 }
