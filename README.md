@@ -4,6 +4,10 @@ Example of the Academic Meta Tool for CAA 2018.
 
 ## Talk
 
+## Webapp
+
+Example web application at [AMT website](http://academic-meta-tool.xyz/caa2018/).
+
 ## Developers and License Holder
 
 Florian Thiery<sup>1</sup>, Dr. Allard Mees<sup>2</sup>, RGZM<sup>3</sup>
