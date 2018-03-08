@@ -1,6 +1,6 @@
 CREATE (aTmSgIxpjOro:Object{label: 'NarbonneRelief7'})
 CREATE (bzyAcTcAcLpT:Keyword{label: 'fore sail'})
 CREATE (mHlapdFmMgmb:Keyword{label: 'lateen sail'})
-MERGE (aTmSgIxpjOro)-[:HAS_DEPICTION{width:0.01}]->(bzyAcTcAcLpT)
-MERGE (aTmSgIxpjOro)-[:HAS_DEPICTION{width:0.99}]->(mHlapdFmMgmb)
+MERGE (aTmSgIxpjOro)-[:HAS_DEPICTION{width:0.99}]->(bzyAcTcAcLpT)
+MERGE (aTmSgIxpjOro)-[:HAS_DEPICTION{width:0.01}]->(mHlapdFmMgmb)
 RETURN aTmSgIxpjOro,bzyAcTcAcLpT,mHlapdFmMgmb
