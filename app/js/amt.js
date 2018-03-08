@@ -189,7 +189,8 @@ var AMT = function() {
             if (graph.edges[i].width > 1.0) {
 				width = 1.0;
 			} else {
-				width = Math.floor(graph.edges[i].width * 10) / 10;
+                width = parseFloat(graph.edges[i].width);
+                width = width.toFixed(2);
 			}
             cpy.edges.push({role: graph.edges[i].role, from: graph.edges[i].from, to: graph.edges[i].to, width: graph.edges[i].width, label: width, font: {align: 'middle', size:10, color:'black', face:'arial'}});
 		}
@@ -214,7 +215,8 @@ var AMT = function() {
             if (width > 1.0) {
 				width = 1.0;
 			} else {
-				width = Math.floor(width * 10) / 10;
+                width = parseFloat(width);
+                width = width.toFixed(2);
 			}
       edges.push({role: role, from: from, to: to, width: width, label: width, font: {align: 'middle', size:10, color:'red', face:'arial'}});
 			return true;
@@ -333,7 +335,8 @@ var AMT = function() {
             if (width > 1.0) {
                 width = 1.0;
             } else {
-                width = Math.floor(width * 10) / 10;
+                width = parseFloat(width);
+                width = width.toFixed(2);
             }
             GRAPH.edited.edges.push({role: role, from: from, to: to, width: width, label: width, font: {align: 'middle', size:10, color:'black', face:'arial'}});
 		}
