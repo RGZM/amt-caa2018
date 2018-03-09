@@ -16,4 +16,14 @@ The Linked Data Cloud is full of controlled resources, which in fact quickly run
 
 (3) Setting up a meta-index for aligning various distributed databases at the RGZM by keywords and linking into the LOD Cloud is subject to uncertainties within the modelling of relations. As a result, this process includes dealing with the above mentioned ambiguity challenges.
 
+## Presentation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxx.svg)](https://doi.org/10.5281/zenodo.xxx)
+
+## Live Demo
+
+[![AMT](https://img.shields.io/badge/demo-amt--caa2018-brightgreen.svg?style=flat)](academic-meta-tool.xyz/caa2018/)
+
+## Links
+
 {% include footer.htm %}
