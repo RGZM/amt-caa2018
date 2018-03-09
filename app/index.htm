@@ -841,23 +841,32 @@
     </div>
     <div id="propertiesModal" class="modal">
         <div class="modal-content">
-            <h4>Choose an example:</h4>
+            <h4>Please choose an example:</h4>
             <br>
             <form class="col s12">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s11">
                         <select id="ontology">
-								<option value="military" selected>Military Vessel?</option>
-								<option value="transport">Transport Vessel?</option>
-								<option value="lateenfore">Lateen or Fore Sail?</option>
-								<option value="sailedrowed">Sailed or Rowed?</option>
-								<option value="nero">Nero?</option>
+								<option value="military" selected>Ship function: Military Vessel?</option>
+								<option value="transport">Ship function: Transport Vessel?</option>
+								<option value="lateenfore">Sailing gear: lateen sail or fore sail?</option>
+								<option value="sailedrowed">Ship propulsion: sailed or rowed?</option>
+								<option value="nero">Is it Nero?</option>
 							</select>
                         <label>Example</label>
                     </div>
+                    <div class="col s1">
+                        <a class="btn-floating btn-large green" onclick="switchOntology()" title="load"><i class="material-icons">check</i></a>
+                    </div>
                 </div>
             </form>
-            <center><a class="btn-floating btn-large green" onclick="switchOntology()" title="load"><i class="material-icons">check</i></a></center>
+            <br>
+            <h4>Info</h4>
+            <h5>Ship function: Military Vessel or Transport Vessel?</h5><img src="img\NeumagenMonument1.jpg" height="200">
+            <h5>Sailing gear: lateen sail or fore sail?</h5><img src="img\NarbonneRelief7.jpg" height="200">
+            <h5>Ship propulsion: sailed or rowed?</h5><img src="img\O41650.jpg" height="200">
+            <h5>Is it Nero?</h5><img src="img\O41485.jpg" height="200">
+            <br>
         </div>
     </div>
     <div id="graphPropModal" class="modal">
