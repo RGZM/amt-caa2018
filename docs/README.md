@@ -1,10 +1,12 @@
 # Taming Ambiguity - Dealing with doubts in archaeological datasets using LOD
 
-* [CAA 2018](http://2018.caaconference.org/): [Session S33](http://2018.caaconference.org/sessions/#_Toc494453195): Guaranteeing data quality in archaeological Linked Open Data
+## CAA 2018, Session S33: Guaranteeing data quality in archaeological Linked Open Data
 
-* *Florian Thiery<sup>1,3</sup> AND Dr. Allard Mees<sup>2,3</sup>*
+* **Florian Thiery<sup>1,3</sup> AND Dr. Allard Mees<sup>2,3</sup>**
 
-* <sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` [`ORCID:0000-0002-3246-3531`](http://orcid.org/0000-0002-3246-3531) <sup>2</sup> Dr. Allard Mees FSA `mees@rgzm.de` <sup>3</sup> Römisch-Germanisches Zentralmuseum Mainz, Leibniz-Forschungsinstitut für Archäologie [`rgzm.de`](http://rgzm.de/)
+* <sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` [`ORCID:0000-0002-3246-3531`](http://orcid.org/0000-0002-3246-3531)
+* <sup>2</sup> Dr. Allard Mees FSA `mees@rgzm.de`
+* <sup>3</sup> Römisch-Germanisches Zentralmuseum Mainz, Leibniz-Forschungsinstitut für Archäologie [`rgzm.de`](http://rgzm.de/)
 
 * **keywords**: `Linked Open Data`, `data quality` `controlled vocabulary` `NAVIS ship database` `Samian Research`
 
@@ -22,8 +24,18 @@ The Linked Data Cloud is full of controlled resources, which in fact quickly run
 
 ## Live Demo
 
-[![AMT](https://img.shields.io/badge/demo-amt--caa2018-brightgreen.svg?style=flat)](http://academic-meta-tool.xyz/caa2018/)
+[![Demo](https://img.shields.io/badge/demo-amt--caa2018-brightgreen.svg?style=flat)](http://academic-meta-tool.xyz/caa2018/)
 
 ## Links
+
+[![info](https://img.shields.io/badge/amt--caa2018-git repo-orange.svg?style=flat)](https://github.com/RGZM/amt-caa2018)
+
+[![info](https://img.shields.io/badge/Academic Meta Tool-website-yellowgreen.svg?style=flat)](http://www.academic-meta-tool.xyz)
+[![info](https://img.shields.io/badge/Academic Meta Tool-git repo-yellowgreen.svg?style=flat)](https://github.com/AcademicMetaTool/amt)
+
+[![info](https://img.shields.io/badge/NAVIS-database-yellow.svg?style=flat)](http://rgzm.de/navis)
+[![info](https://img.shields.io/badge/NAVIS II-database-yellow.svg?style=flat)](http://rgzm.de/navis2)
+[![info](https://img.shields.io/badge/NAVIS III-database-yellow.svg?style=flat)](http://rgzm.de/navis3)
+[![info](https://img.shields.io/badge/Samian Research-database-yellow.svg?style=flat)](http://rgzm.de/samian)
 
 {% include footer.htm %}
