@@ -22,7 +22,7 @@ The Linked Data Cloud is full of controlled resources, which in fact quickly run
 
 ## Live Demo
 
-[![AMT](https://img.shields.io/badge/demo-amt--caa2018-brightgreen.svg?style=flat)](academic-meta-tool.xyz/caa2018/)
+[![AMT](https://img.shields.io/badge/demo-amt--caa2018-brightgreen.svg?style=flat)](http://academic-meta-tool.xyz/caa2018/)
 
 ## Links
 
