@@ -4,7 +4,7 @@
 
 **Florian Thiery<sup>1,3</sup> AND Dr. Allard Mees<sup>2,3</sup>**
 
-<sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` [`ORCID:0000-0002-3246-3531`](http://orcid.org/0000-0002-3246-3531)
+<sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` <a href="https://orcid.org/0000-0002-3246-3531" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-3246-3531</a>
 
 <sup>2</sup> Dr. Allard Mees FSA `mees@rgzm.de`
 
