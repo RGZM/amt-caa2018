@@ -222,7 +222,6 @@
             var roles = CAA.amt.getRoles();
             for (var i in roles) {
                 if (roles[i].domain == type) {
-                    // load only Allen types
                     var role = roles[i].role;
                     var caaprefix = CAA.prefix;
                     $("#role").append("<option value='" + roles[i].role + "'>" + roles[i].label + "</option>");
@@ -262,7 +261,6 @@
                 $("#save").show();
                 if (!CAA.amt.removeIndividual(from)) {
                     console.log("Inkonsistenz vorhanden");
-                    //$("#save").hide();
                 }
             }
             $("#store").show();
@@ -289,7 +287,6 @@
                     if (!inconsistent)
                         console.log("Inkonsistenz vorhanden");
                     inconsistent = true;
-                    //$("#save").hide();
                 }
             });
             $("#store").show();
@@ -320,7 +317,8 @@
                     if (CAA.edit)
                         openModal(params.nodes[0]);
                 });
-                propModal();
+                switchOntology();
+                info();
             });
             $("#modal").modal({
                 complete: cancelEdit
@@ -774,14 +772,15 @@
     </div>
     <div id="info" class="modal">
         <div class="modal-content">
-            <h4>AMT. Academic Meta Tool.</h4>
-            <h5>CAA 2018 Example.</h5>
+            <h4>AMT. Academic Meta Tool. CAA 2018 Example.</h4>
             <br>
             <p><b>About AMT</b></p>
+            <br>
             <p>AMT provides the ability to add weights to edges, to express the vagueness of that edge. So, a relationship between two nodes is depending on its degree. This degree, the edge weight, is usually expressed in percentages. In addition, AMT includes
                 graph-based reasoning. Here, a prototype of AMT is available as a web application.</p>
             <br>
             <p><b>Nodes</b></p>
+            <br>
             <p style="margin-top: 10px">
                 <div class="chip white lighten-4">Object</div>
                 <img height="40" src="img/O41485.jpg">
@@ -792,6 +791,7 @@
             </p>
             <br>
             <p><b>Edges</b></p>
+            <br>
             <p style="margin-top: 10px">
                 <div class="chip red lighten-4">has depiction, dashed</div>
                 <div class="chip blue lighten-4">matches with, dashed</div>
@@ -804,9 +804,13 @@
                 Relations created by reasoning are displayed red. Change the example by clicking <i class="material-icons tiny">sync</i> and download the data by clicking <i class="material-icons tiny">file_download</i>.
             </p>
             <br>
+            <p><b>GitHub Repo</b></p>
+            <br>
+            <p><a href="https://github.com/RGZM/amt-caa2018"><img src="https://img.shields.io/badge/amt--caa2018-git repo-orange.svg?style=flat"></a></p>
+            <br>
             <p><b>About the Creators and the Data</b></p>
-            <p>* AMT Software by Florian Thiery, Martin Unold (i3mainz).
-                <br>* Data by Florian Thiery and Dr. Allard Mees (RGZM).</p>
+            <br>
+            <p>* AMT Software by Florian Thiery, Martin Unold (i3mainz).<br>* Data by Florian Thiery and Dr. Allard Mees (RGZM).</p>
         </div>
     </div>
     <div id="exportModal" class="modal">
@@ -835,32 +839,9 @@
             <textarea id="hiddenclipboard" hidden></textarea>
         </div>
     </div>
-    <div id="loadModal" class="modal">
-        <div class="modal-content">
-            <h4>Load JSON Graph</h4>
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">code</i>
-                        <textarea id="json" class="materialize-textarea"></textarea>
-                        <label for="json">JSON Graph</label>
-                    </div>
-                </div>
-            </form>
-            <center><a class="btn-floating btn-large green" onclick="loadJSONGraphInApp()" title="load"><i class="material-icons">check</i></a></center>
-        </div>
-    </div>
     <div id="propertiesModal" class="modal">
         <div class="modal-content">
             <h4>Choose an example:</h4>
-            <br>
-            <ul class="collection">
-                <li class="collection-item"><b>Nodes:</b>
-                    <div class="chip yellow lighten-4">Object</div>
-                    <div class="chip yellow lighten-4">Keyword</div>
-                    <div class="chip blue lighten-4">Concept</div>
-                </li>
-            </ul>
             <br>
             <form class="col s12">
                 <div class="row">
