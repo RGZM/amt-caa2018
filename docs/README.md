@@ -2,13 +2,15 @@
 
 ## CAA 2018, Session S33: Guaranteeing data quality in archaeological Linked Open Data
 
-* **Florian Thiery<sup>1,3</sup> AND Dr. Allard Mees<sup>2,3</sup>**
+**Florian Thiery<sup>1,3</sup> AND Dr. Allard Mees<sup>2,3</sup>**
 
-* <sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` [`ORCID:0000-0002-3246-3531`](http://orcid.org/0000-0002-3246-3531)
-* <sup>2</sup> Dr. Allard Mees FSA `mees@rgzm.de`
-* <sup>3</sup> Römisch-Germanisches Zentralmuseum Mainz, Leibniz-Forschungsinstitut für Archäologie [`rgzm.de`](http://rgzm.de/)
+sup>1</sup> Florian Thiery M.Sc. `thiery@rgzm.de` [`ORCID:0000-0002-3246-3531`](http://orcid.org/0000-0002-3246-3531)
 
-* **keywords**: `Linked Open Data`, `data quality` `controlled vocabulary` `NAVIS ship database` `Samian Research`
+<sup>2</sup> Dr. Allard Mees FSA `mees@rgzm.de`
+
+<sup>3</sup> Römisch-Germanisches Zentralmuseum Mainz, Leibniz-Forschungsinstitut für Archäologie [`rgzm.de`](http://rgzm.de/)
+
+**keywords**: `Linked Open Data`, `data quality` `controlled vocabulary` `NAVIS ship database` `Samian Research`
 
 The Linked Data Cloud is full of controlled resources, which in fact quickly run out of control. Firstly, each resource collection, e.g. a thesaurus, is cooking its own soup related to its research context. Secondly, conceptualisation of LOD assumes standardised data, but in reality, only generic concepts or real instances exist. Thirdly, archaeological items are usually related to generic instances in the LOD cloud, based on their object orientated nature. Describing these relations by modelling archaeological assumptions causes ambiguities which have to be tamed to guarantee data quality for reuse, demonstrated in three examples:
 
