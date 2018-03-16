@@ -1,6 +1,6 @@
 # amt-caa2018
 
-This is an example of the Academic Meta Tool for the talk `Taming Ambiguity – Dealing with doubts in archaeological datasets using LOD.`  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxx.svg)](https://doi.org/10.5281/zenodo.xxx) at `CAA 2018`. It is based on the Academic Meta Tool Ontology [![AMT](https://img.shields.io/badge/html-leonard-brightgreen.svg?style=flat)](http://academic-meta-tool.xyz/ontology/). More about AMT at [http://academic-meta-tool.xyz](http://academic-meta-tool.xyz/).
+This is an example of the Academic Meta Tool for the talk `Taming Ambiguity – Dealing with doubts in archaeological datasets using LOD.`  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1200112.svg)](https://doi.org/10.5281/zenodo.1200112) at `CAA 2018`. It is based on the Academic Meta Tool Ontology [![AMT](https://img.shields.io/badge/html-leonard-brightgreen.svg?style=flat)](http://academic-meta-tool.xyz/ontology/). More about AMT at [http://academic-meta-tool.xyz](http://academic-meta-tool.xyz/).
 
 ## Webapp
 
