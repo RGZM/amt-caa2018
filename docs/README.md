@@ -22,7 +22,7 @@ The Linked Data Cloud is full of controlled resources, which in fact quickly run
 
 ## Presentation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1200112.svg)](https://doi.org/10.5281/zenodo.1200112)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1200111.svg)](https://doi.org/10.5281/zenodo.1200111)
 
 ## Live Demo
 
